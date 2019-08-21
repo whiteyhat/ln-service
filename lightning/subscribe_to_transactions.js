@@ -56,7 +56,7 @@ module.exports = ({lnd}) => {
       confirmation_count: tx.num_confirmations,
       created_at: new Date(createdAt * msPerSec).toISOString(),
       fee: parseInt(tx.total_fees, decBase),
-      address: tx.address,
+      address: tx.dest_addresses,
       id: tx.tx_hash,
       is_confirmed: !!tx.block_hash,
       is_outgoing: parseInt(tx.amount, decBase) < 0,
